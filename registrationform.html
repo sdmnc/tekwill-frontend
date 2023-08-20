@@ -1,9 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
-    <title>Registration Form</title>
-</head>
+
+    
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            .contact-method {
+                margin-bottom: 20px;
+            }
+
+            /* Add spacing below the container */
+
+            input[type=text],
+            input[type=password],
+            input[type=url],
+            input[type=date],
+            select {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            legend {
+                color: blue;
+                text-align: left;
+                font-style: italic;
+
+            }
+
+            label {
+                color: black;
+                text-align: left;
+                font-weight: bold;
+                border-radius: 5px;
+
+
+            }
+
+            label[for="male"],
+            [for="female"],
+            [for="other"],
+            [for="method1"],
+            [for="method2"],
+            [for="method3"] {
+                text-align: left;
+                font-weight: lighter;
+                margin-bottom: 20px;
+            }
+
+            #button1 {
+                background-color: lightblue;
+                color: white;
+                border: 1px solid blue;
+                border-radius: 5px;
+
+            }
+
+            #button2 {
+                color: white;
+                background-color: grey;
+                border: 1px solid blue;
+                border-radius: 5px;
+                margin-top: 15px;
+            }
+
+
+            fieldset {
+                border: 1px solid blue;
+                border-radius: 5px;
+                padding-top: 2%;
+                padding-bottom: 2%;
+                width: auto;
+            }
+
+            textarea {
+                border-radius: 5px;
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+        </style>
+        <title>Registration Form</title>
+    </head>
 
 <body>
 
@@ -22,7 +112,10 @@
         <input type="password" id="confirm-password" name="confirm-password" value=""> <br>
 
         <!-- Gender Input. -->
-        <label> Gender:</label>
+
+
+
+        <label> Gender:</label><br>
         <input type="radio" id="male" name="gender" value="Male">
           <label for="male">Male</label>
           <input type="radio" id="female" name="gender" value="Female">
@@ -33,7 +126,7 @@
 
         <!-- Birth day Input. -->
 
-        <label for="birthday">Birthday:</label>
+        <label for="birthday">Date of Birth:</label><br>
         <input type="date" id="birthday" name="birthday">
 
     </fieldset>
@@ -65,14 +158,15 @@
     <fieldset>
         <legend>Preferences:</legend>
         <form action="/action_page.php">
-            <label>Preffered Contact Method:</label>
-            <input type="checkbox" id="method1" name="method1" value="Email">
-            <label for="method1"> Email</label>
-            <input type="checkbox" id="method2" name="method2" value="Phone">
-            <label for="method2"> Phone</label>
-            <input type="checkbox" id="method3" name="method3" value="Postal Mail">
-            <label for="method3"> Postal Mail</label><br>
-
+            <div class="contact-method">
+                <label>Preffered Contact Method:</label><br>
+                <input type="checkbox" id="method1" name="method1" value="Email">
+                <label for="method1"> Email</label>
+                <input type="checkbox" id="method2" name="method2" value="Phone">
+                <label for="method2"> Phone</label>
+                <input type="checkbox" id="method3" name="method3" value="Postal Mail">
+                <label for="method3"> Postal Mail</label>
+            </div>
 
             <label>Favorite Color:</label>
             <label for="favcolor"></label>
@@ -112,14 +206,14 @@
 
         <form oninput="result.value = experienceLevel.value">
             <label for="experience-level">Experience Level with HTML:</label>
-            <input type="range" id="experience-level" name="experienceLevel" min="0" max="10" value="0">
-            <output name="result" for="experience-level">0</output>
+            <input type="range" id="experience-level" name="experienceLevel" min="0" max="10" value="5">
+            <output name="result" for="experience-level">5</output>
         </form>
     </fieldset>
 
     <!-- Submit Reset buttons -->
     <form action="/action_page.php"></form>
-    <input type="submit" value="Submit"> <input type="reset" value="Reset">
+    <input type="submit" value="Submit" id="button1"> <input type="reset" value="Reset" id="button2">
 
 
 </body>
